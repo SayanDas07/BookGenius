@@ -5,7 +5,7 @@ import numpy as np
 import os
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:3000"])  
+CORS(app, origins=["https://book-genius-two.vercel.app"])  
 
 # Load the pickled data
 popular_df = pickle.load(open('popular.pkl', 'rb'))
