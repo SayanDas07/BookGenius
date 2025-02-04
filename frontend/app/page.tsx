@@ -19,7 +19,7 @@ export default function Home() {
   const [popularBooks, setPopularBooks] = useState<Book[]>([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/popular-books")
+    axios.get("https://bookgenius.onrender.com/api/popular-books")
       .then(response => setPopularBooks(response.data))
       .catch(error => console.error("Error fetching popular books:", error));
   }, []);

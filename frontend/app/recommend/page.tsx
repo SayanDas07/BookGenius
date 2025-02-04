@@ -22,7 +22,7 @@ export default function Recommend() {
   const [recommendations, setRecommendations] = useState<Recommendation[]>([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/book-titles")
+    axios.get("https://bookgenius.onrender.com/api/book-titles")
       .then(response => setBookTitles(response.data))
       .catch(error => console.error("Error fetching book titles:", error));
   }, []);
@@ -30,7 +30,7 @@ export default function Recommend() {
   const fetchRecommendations = async () => {
     if (!selectedBook) return;
     try {
-      const response = await axios.post("http://localhost:5000/api/recommend", { book_title: selectedBook });
+      const response = await axios.post("https://bookgenius.onrender.com/api/recommend", { book_title: selectedBook });
       setRecommendations(response.data);
     } catch (error) {
       console.error("Error fetching recommendations:", error);
